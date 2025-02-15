@@ -2,21 +2,26 @@
   "builds": [
     {
       "src": "core/wsgi.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "30mb",
+        "runtime": "python3.12",
+        "buildCommand": "bash setup.sh"
+      }
     }
   ],
   "routes": [
     {
+      "src": "/(.*)",
+      "dest": "core/wsgi.py"
+    },
+    {
       "src": "/static/(.*)",
-      "dest": "/assets/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/media/(.*)",
       "dest": "/media/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "core/wsgi.py"
     }
   ]
 }

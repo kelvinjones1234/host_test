@@ -1,6 +1,9 @@
 #!/bin/bash
 
-pip install -r requirements.txt
+
 pip install setuptools
-python3.9 manage.py collectstatic
+pip install -r requirements.txt
+python manage.py collectstatic
+python manage.py makemigrations
+python manage.py migrate
 

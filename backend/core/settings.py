@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    # "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -146,15 +146,15 @@ MEDIA_URL = "/media/"
 STATIC_ROOT = BASE_DIR / "assets"
 
 
-# STORAGES = {
-#     "staticfiles": {
-#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-#     },
-#     "default": {
-#         "BACKEND": "django.core.files.storage.FileSystemStorage",
-#         "LOCATION": os.path.join(BASE_DIR, "media"),
-#     },
-# }
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "LOCATION": os.path.join(BASE_DIR, "media"),
+    },
+}
 
 
 # Default primary key field type

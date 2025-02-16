@@ -24,8 +24,12 @@ class MonnifyAPIClient:
         :param secret_key: Monnify secret key
         """
         # Use settings if not provided directly
-        self.api_key = os.getenv('MONIFY_API_KEY')
-        self.secret_key = os.getenv('MONIFY_SECRETE_KEY')
+        # self.api_key = os.getenv('MONIFY_API_KEY')
+        # self.secret_key = os.getenv('MONIFY_SECRETE_KEY')
+        self.api_key = "MK_TEST_5TLTGUVZ8K"
+        self.secret_key = "FT4DD1PJC2SXDHC5V069HDUALMGERT16"
+
+
 
         
         # Base URLs
@@ -44,7 +48,7 @@ class MonnifyAPIClient:
         """
         try:
             # Create base64 encoded credentials
-            credentials = f"{self.api_key}:{self.secret_key}"
+            credentials = f"MK_TEST_5TLTGUVZ8K:FT4DD1PJC2SXDHC5V069HDUALMGERT16"
             encoded_credentials = base64.b64encode(credentials.encode('utf-8')).decode('utf-8')
             print(encoded_credentials)
             

@@ -279,7 +279,7 @@ class MonnifyReservedAccountView(APIView):
                     "accountName": user_data.username,
                     "accountReference": account_reference,
                     "currencyCode": "NGN",
-                    "contractCode": os.getenv("CONTRACT_CODE"),
+                    "contractCode": "6525688895",
                     "customerEmail": user_data.email,
                     "customerName": f"{user_data.first_name} {user_data.last_name}",
                     "bvn": bvn,
